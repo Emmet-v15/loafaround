@@ -1,19 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5p28bql1m6ne"]
 
-[ext_resource type="Texture2D" uid="uid://eew4ofkgv4rr" path="res://assets/sprites/platforms.png" id="1_x3xq4"]
+[ext_resource type="Texture2D" uid="uid://dr1gcufsh7i83" path="res://assets/tilesheets/Candy Land/candy land tiels - free version.png" id="1_hu8b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iw15"]
-size = Vector2(32, 9)
+size = Vector2(48, 13)
 
 [node name="Platform" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 0.5)
-texture = ExtResource("1_x3xq4")
+texture = ExtResource("1_hu8b0")
 region_enabled = true
-region_rect = Rect2(16, 0, 32, 9)
+region_rect = Rect2(0, 48, 48, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_5iw15")
 one_way_collision = true

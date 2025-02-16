@@ -5,16 +5,16 @@ var target_frequency = 20000.0
 var frequency_change_speed = 10
 
 
-func set_master_volume(volume_db: float) -> void:
-	AudioServer.set_bus_volume_db(0, volume_db)
+func set_master_volume(volume_dba: float) -> void:
+	AudioServer.set_bus_volume_db(0, volume_dba)
 
 
-func set_music_volume(volume_db: float) -> void:
-	AudioServer.set_bus_volume_db(1, volume_db)
+func set_music_volume(volume_dba: float) -> void:
+	AudioServer.set_bus_volume_db(1, volume_dba)
 
 
-func set_sfx_volume(volume_db: float) -> void:
-	AudioServer.set_bus_volume_db(2, volume_db)
+func set_sfx_volume(volume_dba: float) -> void:
+	AudioServer.set_bus_volume_db(2, volume_dba)
 
 
 func _ready() -> void:

@@ -5,11 +5,12 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	Engine.time_scale = 0.5
 	for child in body.get_children():
+		if child is AnimatedSprite2D:
+			child.play("ded")
+			child.queue_redraw()
 		if child is CollisionShape2D:
 			child.queue_free()
-		if child is AnimatedSprite2D:
-			child.play("die")
-			
+
 	body.velocity.y = -170
 	timer.start()
 

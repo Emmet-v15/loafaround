@@ -263,6 +263,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h82ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h82ld")
 }],
 "loop": true,
 "name": &"ded",
@@ -454,9 +457,9 @@ script = ExtResource("1_kqxga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_asbe6")
-animation = &"back"
+animation = &"ded"
 autoplay = "idle"
-frame_progress = 0.753879
+frame_progress = 0.865391
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

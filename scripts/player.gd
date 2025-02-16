@@ -5,6 +5,7 @@ const SPEED = 13000.0
 const JUMP_VELOCITY = -300.
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 var jumped_fall = false
 
 func _process(delta: float) -> void:
@@ -22,18 +23,20 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.flip_h = true 	
 	
 	# Play Animations
-	if is_on_floor():
-		jumped_fall = false
-		if direction == 0:
-			animated_sprite_2d.play("idle")
+	if animated_sprite_2d.animation != "ded":
+		if is_on_floor():
+			jumped_fall = false
+			if direction == 0:
+				animated_sprite_2d.play("idle")
+			else:
+				animated_sprite_2d.play("walking")
 		else:
-			animated_sprite_2d.play("walking")
-	else:
-		if jumped_fall:
-			animated_sprite_2d.play("falling")
-		else:
-			animated_sprite_2d.play("falling")
+			if jumped_fall:
+				animated_sprite_2d.play("falling")
+			else:
+				animated_sprite_2d.play("falling")
 	
+
 	# Handle jump.
 	if Input.is_action_pressed("jump") and is_on_floor():
 		jumped_fall = true

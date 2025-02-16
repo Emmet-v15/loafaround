@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dovnj3j65c1s" path="res://scenes/player.tscn" id="1_opryh"]
 [ext_resource type="Texture2D" uid="uid://dr1gcufsh7i83" path="res://assets/tilesheets/Candy Land/candy land tiels - free version.png" id="2_h8mej"]
-[ext_resource type="Texture2D" uid="uid://415kx7eea3fg" path="res://scenes/baguette.png" id="2_kj2li"]
+[ext_resource type="Texture2D" uid="uid://415kx7eea3fg" path="res://assets/Food/baguette.png" id="2_kj2li"]
 [ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/Brackeys Assets/fonts/PixelOperator8.ttf" id="3_6lvv1"]
 [ext_resource type="Texture2D" uid="uid://ow3jeob2bpeq" path="res://assets/tilesheets/Candy Land/day background.png" id="5_2dmg2"]
 [ext_resource type="PackedScene" uid="uid://bvira5xra8ux1" path="res://scenes/killzone.tscn" id="5_3ifhl"]
