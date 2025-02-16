@@ -26,6 +26,5 @@ func _input(event):
 		get_tree().paused = true
 		get_tree().get_root().set_input_as_handled()
 
-
 func _process(delta: float) -> void:
 	Engine.time_scale = lerp(Engine.time_scale, target_time_scale, pause_speed * delta)

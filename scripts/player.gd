@@ -6,10 +6,8 @@ const JUMP_VELOCITY = -300.
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var jumped_fall = false
-var real_position = Vector2(position)
 
 func _process(delta: float) -> void:
-	position = real_position
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -48,5 +46,3 @@ func _process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 
 	move_and_slide()
-	real_position = position
-	position = round(position)

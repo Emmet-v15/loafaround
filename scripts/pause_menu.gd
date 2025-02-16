@@ -3,11 +3,11 @@ extends CanvasLayer
 var tweenIn: Tween
 var tweenOut: Tween
 var target_rotation = 0.0
-var rotation_speed = 10
+var rotation_speed = 10.0
 
 
 func _ready() -> void:
-	rotation = -PI/2
+	rotation = -PI/2.0
 
 func apply_bounce_rotation():
 	show()
@@ -27,7 +27,7 @@ func resume_game() -> void:
 		tweenIn.stop()
 	tweenOut = create_tween().set_parallel()
 	tweenOut.set_process_mode(Tween.TWEEN_PROCESS_IDLE)
-	tweenOut.tween_property(self, "rotation", -PI/2, 10/rotation_speed)
+	tweenOut.tween_property(self, "rotation", -PI/2.0, 10.0/rotation_speed)
 	await tweenOut.finished
 	hide()
 
