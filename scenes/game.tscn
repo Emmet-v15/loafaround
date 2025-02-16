@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cera8vgpgb5er"]
+[gd_scene load_steps=13 format=4 uid="uid://cera8vgpgb5er"]
 
 [ext_resource type="PackedScene" uid="uid://dovnj3j65c1s" path="res://scenes/player.tscn" id="1_opryh"]
 [ext_resource type="Texture2D" uid="uid://dr1gcufsh7i83" path="res://assets/tilesheets/Candy Land/candy land tiels - free version.png" id="2_h8mej"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/Brackeys Assets/fonts/PixelOperator8.ttf" id="3_6lvv1"]
 [ext_resource type="Texture2D" uid="uid://ow3jeob2bpeq" path="res://assets/tilesheets/Candy Land/day background.png" id="5_2dmg2"]
 [ext_resource type="PackedScene" uid="uid://bvira5xra8ux1" path="res://scenes/killzone.tscn" id="5_3ifhl"]
+[ext_resource type="PackedScene" uid="uid://ccnra8hw3g7c0" path="res://scenes/bird.tscn" id="8_m4vpp"]
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="9_t0fg1"]
 
 [sub_resource type="TileSet" id="TileSet_mgqxg"]
@@ -135,17 +136,29 @@ texture = ExtResource("2_kj2li")
 
 [node name="Label" type="Label" parent="World/Labels"]
 z_index = 6
-offset_left = 5.0
-offset_top = -42.0
-offset_right = 72.0
-offset_bottom = 2.0
+offset_left = -68.0
+offset_top = -78.0
+offset_right = -1.0
+offset_bottom = -34.0
 theme_override_colors/font_color = Color(1, 0.811765, 0.905882, 1)
 theme_override_fonts/font = ExtResource("3_6lvv1")
 theme_override_font_sizes/font_size = 8
 text = "Hi Satouu!!"
 
+[node name="Label2" type="Label" parent="World/Labels"]
+z_index = 6
+offset_left = -16.0
+offset_top = -52.0
+offset_right = 127.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(1, 0.811765, 0.905882, 1)
+theme_override_fonts/font = ExtResource("3_6lvv1")
+theme_override_font_sizes/font_size = 8
+text = "You have been 
+turnt into a kitty! Yay!"
+
 [node name="Killzone" parent="World" instance=ExtResource("5_3ifhl")]
-position = Vector2(0, 158)
+position = Vector2(0, 184)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Killzone"]
 shape = SubResource("WorldBoundaryShape2D_wflq5")
@@ -166,3 +179,6 @@ z_index = -1
 scale = Vector2(0.122853, 0.1357)
 texture = ExtResource("5_2dmg2")
 metadata/_edit_lock_ = true
+
+[node name="Bird" parent="." instance=ExtResource("8_m4vpp")]
+position = Vector2(241, -74)
