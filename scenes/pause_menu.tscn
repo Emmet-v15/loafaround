@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://bxeiscq4k4diq"]
 
-[ext_resource type="Texture2D" uid="uid://xe4746mpoe3x" path="res://assets/sprites/slider-grabber.png" id="1_1tvo1"]
-[ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/fonts/PixelOperator8.ttf" id="1_6qpfi"]
+[ext_resource type="Texture2D" uid="uid://xe4746mpoe3x" path="res://assets/Brackeys Assets/sprites/slider-grabber.png" id="1_1tvo1"]
+[ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/Brackeys Assets/fonts/PixelOperator8.ttf" id="1_6qpfi"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_hnrne"]
-[ext_resource type="FontFile" uid="uid://cbgps42whdll" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_vxu2l"]
+[ext_resource type="FontFile" uid="uid://cbgps42whdll" path="res://assets/Brackeys Assets/fonts/PixelOperator8-Bold.ttf" id="2_vxu2l"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_vpf38"]
 color = Color(0, 0, 0, 0)

@@ -205,6 +205,57 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_vdhp7"]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.03333, 5.03333, 6.96667, 8.06667, 10.0667, 11.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-152, -89), Vector2(-152, -89), Vector2(-152, -89), Vector2(23, -16), Vector2(23, -16), Vector2(237, -78), Vector2(237, -78)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.03333, 5.03333, 10.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"stomp", &"fly", &"fly", &"stomp"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4.03333, 5.03333, 6.96667, 8.06667, 10.0667, 11.1, 13.1667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-151, -88), Vector2(-151, -88), Vector2(0, 0), Vector2(0, 0), Vector2(237, -79), Vector2(237, -79), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Baguette:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6.96667, 8.06667, 10.0667, 11.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(25, -8), Vector2(25, -8), Vector2(242, -72), Vector2(242, -72)]
+}
+
 [sub_resource type="Animation" id="Animation_fh6ew"]
 resource_name = "cutscene"
 tracks/0/type = "value"
@@ -232,57 +283,6 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_vdhp7"]
-length = 20.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(5, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-152, -89), Vector2(-152, -89)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(5, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"stomp", &"fly"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Camera2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(5, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(26, -21)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a77w5"]
 _data = {
 "RESET": SubResource("Animation_vdhp7"),
@@ -303,11 +303,6 @@ z_index = 5
 use_parent_material = true
 tile_map_data = PackedByteArray("AAARAAAAAAAAAAMAAAASAAAAAAABAAMAAAATAAAAAAACAAMAAAAVAP//AAAAAAMAAAAWAP//AAABAAMAAAAXAP//AAACAAMAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAIAAAD//wAAAAABAAAAAAD//wEAAAABAAIAAAAAAAAAAAABAAAAAAAAAAEAAAABAAIAAAABAAAAAAABAAAAAAABAAEAAAABAAIAAAACAAAAAAACAAAAAAACAAEAAAACAAIAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAEAAAAFAP//AAABAAAAAAAFAAAAAAABAAEAAAAGAP//AAAEAAAAAAAGAAAAAAAEAAEAAAAHAAAAAAAFAAEAAAAHAAEAAAAHAAIAAAAIAAAAAAAEAAAAAAAIAAEAAAABAAEAAAAIAAIAAAAGAAIAAAAJAAEAAAAFAAEAAAAJAAIAAAAHAAIAAAAJAAMAAAAHAAMAAAAKAAEAAAABAAAAAAAKAAIAAAABAAEAAAAKAAMAAAABAAIAAAALAAEAAAABAAAAAAALAAIAAAABAAEAAAALAAMAAAABAAIAAAAMAAEAAAABAAAAAAAMAAIAAAABAAEAAAAMAAMAAAABAAIAAAANAAEAAAABAAAAAAANAAIAAAABAAEAAAANAAMAAAABAAIAAAAOAAEAAAABAAAAAAAOAAIAAAABAAEAAAAOAAMAAAABAAIAAAAHAP//AAAFAAAAAAAJAAAAAAAFAAAAAAAPAAEAAAACAAAAAAAPAAIAAAACAAEAAAAPAAMAAAACAAIAAAD8/wAAAAACAAMAAAD7/wAAAAABAAMAAAD6/wAAAAAAAAMAAAD2////AAAAAAMAAAD3////AAABAAMAAAD4////AAACAAMAAAAHAAIAAAAHAAMAAAAGAAEAAAAGAAIAAAAEAAEAAAAAAAIAAAAFAAEAAAABAAIAAAASAP3/AAAAAAMAAAATAP3/AAACAAMAAAAPAPz/AAACAAMAAAAOAPz/AAAAAAMAAAD9/wUAAAABAAAAAAD8/wUAAAAAAAAAAAD8/wYAAAAAAAEAAAD8/wcAAAADAAIAAAD//wUAAAABAAAAAAD//wYAAAAHAAMAAAAAAAUAAAACAAAAAAAAAAYAAAACAAEAAAAAAAcAAAADAAIAAAD9/wkAAAAAAAMAAAD+/wkAAAABAAMAAAD//wkAAAACAAMAAAD+/wUAAAABAAAAAAD9/wYAAAAEAAMAAADy/wAAAAADAAQAAADx/wEAAAADAAQAAADw/wIAAAADAAQAAADv/wMAAAADAAQAAADx/wIAAAADAAUAAADy/wEAAAADAAUAAADz/wAAAAABAAAAAAD0/wAAAAACAAAAAAD0/wEAAAACAAEAAAD0/wIAAAACAAEAAAD0/wMAAAACAAEAAADz/wIAAAABAAQAAADy/wIAAAAAAAQAAADy/wMAAAAAAAUAAADz/wMAAAABAAUAAADv/wQAAAADAAUAAADw/wQAAAABAAEAAADz/wQAAAABAAEAAAD0/wQAAAACAAEAAADy/wQAAAABAAEAAADu/wQAAAABAAAAAAD0/wUAAAACAAIAAADz/wUAAAABAAIAAADy/wUAAAABAAIAAADx/wUAAAABAAIAAADw/wUAAAABAAIAAADv/wUAAAABAAIAAADu/wUAAAABAAIAAADt/wQAAAAAAAAAAADt/wUAAAAAAAIAAADw/wMAAAADAAUAAADz/wEAAAABAAEAAADx/wQAAAABAAEAAADx/wMAAAABAAEAAADq/wUAAAADAAIAAADq/wQAAAADAAAAAADn/wQAAAADAAAAAADn/wUAAAADAAIAAADi/wMAAAAAAAMAAADj/wMAAAABAAMAAADk/wMAAAACAAMAAADe/wAAAAAAAAMAAADf/wAAAAABAAMAAADg/wAAAAACAAMAAADl//r/AAADAAEAAADl//v/AAAAAAEAAADl//z/AAAHAAMAAADm//n/AAAFAAIAAADm//v/AAAEAAMAAGDm//3/AAADAAcAAADn//n/AAAGAAIAAADn//7/AAADAAcAAADo//r/AAAHAAMAAADo////AAADAAcAAADp//r/AAAEAAMAAADp////AAACAAcAAADq//n/AAAFAAIAAADq//7/AAACAAcAAADr//n/AAAGAAIAAADr//v/AAAHAAMAAFDr//3/AAACAAcAAADs//r/AAADAAEAAADs//v/AAACAAEAAADs//z/AAAEAAMAAADl//j/AAADAAQAAADl//n/AAAAAAEAAADm//f/AAAGAAAAAADm//j/AAAGAAEAAADm//z/AAADAAYAAADn//f/AAAFAAAAAADn//j/AAAFAAEAAADn//z/AAAEAAMAAGDn//3/AAADAAYAAADo//j/AAACAAQAAADo//n/AAACAAUAAADo//3/AAAEAAMAAGDo//7/AAADAAYAAADp//j/AAADAAQAAADp//n/AAADAAUAAADp//3/AAAHAAMAAFDp//7/AAACAAYAAADq//f/AAAGAAAAAADq//j/AAAGAAEAAADq//z/AAAHAAMAAFDq//3/AAACAAYAAADr//f/AAAFAAAAAADr//j/AAAFAAEAAADr//z/AAACAAYAAADs//j/AAACAAQAAADs//n/AAACAAEAAADh//z/AAAAAAMAAADi//z/AAABAAMAAADj//z/AAACAAMAAAD2//v/AAADAAMAAAD4//f/AAADAAMAAAD2//P/AAADAAMAAAD5/+//AAAAAAMAAAD6/+//AAABAAMAAAD7/+//AAACAAMAAAA=")
 tile_set = SubResource("TileSet_daa0k")
-
-[node name="Baguette" type="Sprite2D" parent="World/Layers"]
-z_index = 10
-position = Vector2(26, -8)
-texture = ExtResource("2_kj2li")
 
 [node name="Food" type="Node" parent="World"]
 
@@ -365,13 +360,19 @@ metadata/_edit_lock_ = true
 position = Vector2(-152, -89)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird"]
-position = Vector2(1, -2)
+position = Vector2(1, 2)
 sprite_frames = SubResource("SpriteFrames_ft5xf")
 animation = &"stomp"
 autoplay = "stomp"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Bird"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Bird")
 libraries = {
 "": SubResource("AnimationLibrary_a77w5")
 }
 autoplay = "RESET"
+
+[node name="Baguette" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(25, -8)
+texture = ExtResource("2_kj2li")
