@@ -7,8 +7,9 @@ func _on_body_entered(body: Node2D) -> void:
 	for child in body.get_children():
 		if child is CollisionShape2D:
 			child.queue_free()
-		if child is AnimatedSprite2D:
-			child.play("die")
+		# if child is AnimatedSprite2D:
+		# 	child.play("die")
+
 	body.velocity.y = -170
 	timer.start()
 
