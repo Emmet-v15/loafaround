@@ -73,8 +73,8 @@ func move(delta):
 		if is_on_floor():
 			jumped_fall = true
 			velocity.y = JUMP_VELOCITY
-		elif extra_jumps > 0:
-			extra_jumps -= 1
+		elif _current_extra_jumps > 0:
+			_current_extra_jumps -= 1
 			velocity.y = JUMP_VELOCITY
 			var super_jump = load("res://scenes/super_jump.tscn").instantiate()
 			super_jump.global_position = global_position
