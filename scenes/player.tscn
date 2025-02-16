@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://dovnj3j65c1s"]
+[gd_scene load_steps=39 format=3 uid="uid://dovnj3j65c1s"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_kqxga"]
 [ext_resource type="Texture2D" uid="uid://dbn0kb5q03nrm" path="res://assets/Character/cat-sprite.png" id="2_fw5al"]
+[ext_resource type="Shader" uid="uid://dn0tnehisur8h" path="res://scenes/double_jump_particles.tres" id="3_f470f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdx82"]
 atlas = ExtResource("2_fw5al")
@@ -449,6 +450,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_effpc"]
 radius = 0.894929
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqbbi"]
+shader = ExtResource("3_f470f")
+
+[sub_resource type="Gradient" id="Gradient_ahsiq"]
+colors = PackedColorArray(0.652542, 0.652542, 0.652542, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o3ohn"]
+gradient = SubResource("Gradient_ahsiq")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -16)
 collision_layer = 2
@@ -459,7 +472,7 @@ script = ExtResource("1_kqxga")
 sprite_frames = SubResource("SpriteFrames_asbe6")
 animation = &"ded"
 autoplay = "idle"
-frame_progress = 0.025111
+frame_progress = 0.904706
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -474,3 +487,9 @@ scale = Vector2(-6.75875, -6.72174)
 shape = SubResource("CircleShape2D_effpc")
 
 [node name="Baguette" type="Sprite2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D"]
+process_material = SubResource("ShaderMaterial_hqbbi")
+texture = SubResource("GradientTexture2D_o3ohn")

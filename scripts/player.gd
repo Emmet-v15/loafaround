@@ -5,14 +5,27 @@ const JUMP_VELOCITY = -300.
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var cutscene_player: AnimationPlayer = $"../AnimationPlayer"
-# Disable movement at start
+
+#step 0: stop player movement until the cutscene is finished
 var can_move = false
+
 func _ready():
+
+	var cutscene_name = &"cutscene"
+	cutscene_player.play(cutscene_name) # Play the cutscene
+
+	# step 1: get the length of the cutscene
+	var cutscene_length = cutscene_player.get(cutscene_name).length
+
+	# step 2: check the global variable to see if the cutscene has been played
 	if !GameManager.cutscene_played:
-		cutscene_player.play(&"cutscene")
-		await get_tree().create_timer(19.0).timeout  # Wait 16 seconds
-		GameManager.cutscene_played = true
-	can_move = true  # Enable movement
+		await get_tree().create_timer(cutscene_length).timeout # Wait for the cutscene to finish
+		GameManager.cutscene_played = true # Set the global variable to true so we don't play the cutscene next time we load this code
+	
+	cutscene_player.seek(cutscene_length) # Skip the cutscene (seek means jump to a specific time in the animation)
+
+	# step 3: allow player movement if the cutscene has been played or we are skipping the cutscene
+	can_move = true
 
 func _process(delta):
 	if can_move:
@@ -50,10 +63,17 @@ func move(delta):
 	
 
 	# Handle jump.
-	if Input.is_action_pressed("jump") and is_on_floor():
-		jumped_fall = true
-		velocity.y = JUMP_VELOCITY 
-	
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			jumped_fall = true
+			velocity.y = JUMP_VELOCITY
+		else:
+			velocity.y = JUMP_VELOCITY
+			var particles = load("res://scenes/particles.tscn").instantiate()
+			particles.global_position = global_position
+			particles.emitting = true
+			get_tree().root.add_child(particles)
+
 	# Apply movement
 	if direction:
 		velocity.x = direction * SPEED * delta
