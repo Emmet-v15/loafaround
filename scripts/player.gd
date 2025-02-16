@@ -1,14 +1,26 @@
 extends CharacterBody2D
 
-
 const SPEED = 13000.0
 const JUMP_VELOCITY = -300.
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var cutscene_player: AnimationPlayer = $"../AnimationPlayer"
+# Disable movement at start
+var can_move = false
+func _ready():
+	if !GameManager.cutscene_played:
+		cutscene_player.play(&"cutscene")
+		await get_tree().create_timer(19.0).timeout  # Wait 16 seconds
+		GameManager.cutscene_played = true
+	can_move = true  # Enable movement
 
-var jumped_fall = false
+func _process(delta):
+	if can_move:
+		move(delta)  # Replace with your movement logic
 
-func _process(delta: float) -> void:
+func move(delta):
+	var jumped_fall = false
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

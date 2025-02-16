@@ -207,6 +207,10 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_vdhp7"]
 length = 19.0
+
+[sub_resource type="Animation" id="Animation_sknti"]
+resource_name = "cutscene 1"
+length = 19.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -271,37 +275,10 @@ OUR BAGUETTE?!?", "WE GOTTA TAKE IT
 BACK >:C"]
 }
 
-[sub_resource type="Animation" id="Animation_fh6ew"]
-resource_name = "cutscene"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-152, -89)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a77w5"]
 _data = {
 "RESET": SubResource("Animation_vdhp7"),
-"cutscene": SubResource("Animation_fh6ew")
+"cutscene": SubResource("Animation_sknti")
 }
 
 [node name="Game" type="Node2D"]
@@ -372,7 +349,6 @@ root_node = NodePath("../Bird")
 libraries = {
 "": SubResource("AnimationLibrary_a77w5")
 }
-autoplay = "RESET"
 
 [node name="Baguette" type="Sprite2D" parent="."]
 z_index = 10
