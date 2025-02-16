@@ -15,7 +15,7 @@ func _ready():
 	cutscene_player.play(cutscene_name) # Play the cutscene
 
 	# step 1: get the length of the cutscene
-	var cutscene_length = cutscene_player.get(cutscene_name).length
+	var cutscene_length = cutscene_player.get_animation(cutscene_name).length
 
 	# step 2: check the global variable to see if the cutscene has been played
 	if !GameManager.cutscene_played:
