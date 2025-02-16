@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xe4746mpoe3x"
-path="res://.godot/imported/slider-grabber.png-56b07479e4171d37d952412249575293.ctex"
+path="res://.godot/imported/slider-grabber.png-0053b691d0a548201ec450bf2c0129ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/slider-grabber.png"
-dest_files=["res://.godot/imported/slider-grabber.png-56b07479e4171d37d952412249575293.ctex"]
+source_file="res://assets/Brackeys Assets/sprites/slider-grabber.png"
+dest_files=["res://.godot/imported/slider-grabber.png-0053b691d0a548201ec450bf2c0129ba.ctex"]
 
 [params]
 
