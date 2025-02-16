@@ -447,6 +447,7 @@ animations = [{
 radius = 0.894929
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -16)
 collision_layer = 2
 script = ExtResource("1_kqxga")
 
@@ -454,7 +455,7 @@ script = ExtResource("1_kqxga")
 sprite_frames = SubResource("SpriteFrames_asbe6")
 animation = &"walking"
 autoplay = "idle"
-frame_progress = 0.0204236
+frame_progress = 0.210453
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
