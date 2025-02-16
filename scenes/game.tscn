@@ -312,6 +312,17 @@ theme_override_colors/font_color = Color(1, 0.811765, 0.905882, 1)
 theme_override_fonts/font = ExtResource("3_6lvv1")
 theme_override_font_sizes/font_size = 8
 
+[node name="Label2" type="Label" parent="World/Labels"]
+z_index = 6
+offset_left = -398.0
+offset_top = -77.0
+offset_right = -301.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(1, 0.415686, 0.705882, 1)
+theme_override_fonts/font = ExtResource("3_6lvv1")
+theme_override_font_sizes/font_size = 8
+text = "We <3 You!"
+
 [node name="Killzone" parent="World" instance=ExtResource("5_3ifhl")]
 position = Vector2(0, 184)
 
