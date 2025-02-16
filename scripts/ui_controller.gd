@@ -1,15 +1,15 @@
 extends Node
 
-var coin_panel: CanvasLayer
+var points_panel: CanvasLayer
 var pause_menu: CanvasLayer
 
 var target_time_scale = 1.0
 var pause_speed = 10.
 
 func _ready():
-	coin_panel = preload("res://scenes/coin_panel.tscn").instantiate()
+	points_panel = preload("res://scenes/points_panel.tscn").instantiate()
 	pause_menu = preload("res://scenes/pause_menu.tscn").instantiate()
-	add_child(coin_panel)
+	add_child(points_panel)
 	add_child(pause_menu)
 	pause_menu.hide()
 

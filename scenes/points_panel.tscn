@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b06j5crqj7y0g"]
 
-[ext_resource type="Texture2D" uid="uid://cglch8i1gsxs0" path="res://assets/sprites/coin.png" id="1_asd4x"]
-[ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/fonts/PixelOperator8.ttf" id="1_gutd0"]
+[ext_resource type="Texture2D" uid="uid://cglch8i1gsxs0" path="res://assets/Brackeys Assets/sprites/coin.png" id="1_asd4x"]
+[ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/Brackeys Assets/fonts/PixelOperator8.ttf" id="1_gutd0"]
 [ext_resource type="Script" path="res://scripts/coin_panel.gd" id="1_us0gi"]
 
 [sub_resource type="Theme" id="Theme_igvkm"]
@@ -49,7 +49,7 @@ size_flags_stretch_ratio = 0.85
 texture = SubResource("AtlasTexture_cy5wu")
 stretch_mode = 5
 
-[node name="CoinLabel" type="Label" parent="Control/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="PointsLabel" type="Label" parent="Control/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 0.94902, 0.105882, 1)
