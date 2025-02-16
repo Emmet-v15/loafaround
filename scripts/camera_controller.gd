@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 	position = real_position
 	
 	# Clamp position to 15px down
-	position.y = min(position.y, 15)
+	position.y = min(position.y, 150)
