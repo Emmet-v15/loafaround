@@ -9,6 +9,10 @@ const JUMP_VELOCITY = -300.
 #step 0: stop player movement until the cutscene is finished
 var can_move = false
 
+var extra_jumps = 1
+var _current_extra_jumps = 0
+
+
 func _ready():
 
 	var cutscene_name = &"cutscene"
@@ -37,6 +41,8 @@ func move(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	else:
+		_current_extra_jumps = extra_jumps
 
 	# Get Direction
 	var direction := Input.get_axis("move_left", "move_right")
@@ -67,12 +73,15 @@ func move(delta):
 		if is_on_floor():
 			jumped_fall = true
 			velocity.y = JUMP_VELOCITY
-		else:
+		elif extra_jumps > 0:
+			extra_jumps -= 1
 			velocity.y = JUMP_VELOCITY
-			var particles = load("res://scenes/particles.tscn").instantiate()
-			particles.global_position = global_position
-			particles.emitting = true
-			get_tree().root.add_child(particles)
+			var super_jump = load("res://scenes/super_jump.tscn").instantiate()
+			super_jump.global_position = global_position
+			get_tree().root.add_child(super_jump)
+			super_jump.flip_h = animated_sprite_2d.flip_h
+			await get_tree().create_timer(0.5).timeout
+			super_jump.queue_free()
 
 	# Apply movement
 	if direction:

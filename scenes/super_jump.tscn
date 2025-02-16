@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://6b8i3y6n440x"]
+
+[ext_resource type="Texture2D" uid="uid://dbn0kb5q03nrm" path="res://assets/Character/cat-sprite.png" id="1_nvruo"]
+
+[node name="SuperJump" type="Sprite2D"]
+texture = ExtResource("1_nvruo")
+region_enabled = true
+region_rect = Rect2(95, 168, 31, 27)
