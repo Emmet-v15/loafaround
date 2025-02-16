@@ -453,9 +453,9 @@ script = ExtResource("1_kqxga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_asbe6")
-animation = &"walking"
+animation = &"back"
 autoplay = "idle"
-frame_progress = 0.210453
+frame_progress = 0.294931
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

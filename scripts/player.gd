@@ -29,12 +29,12 @@ func _process(delta: float) -> void:
 		if direction == 0:
 			animated_sprite_2d.play("idle")
 		else:
-			animated_sprite_2d.play("run")
+			animated_sprite_2d.play("walking")
 	else:
 		if jumped_fall:
-			animated_sprite_2d.play("jump")
+			animated_sprite_2d.play("falling")
 		else:
-			animated_sprite_2d.play("fall")
+			animated_sprite_2d.play("falling")
 	
 	# Handle jump.
 	if Input.is_action_pressed("jump") and is_on_floor():
