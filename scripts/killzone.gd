@@ -4,7 +4,9 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	Engine.time_scale = 0.5
-	body.get_node("CollisionShape2D").queue_free()
+	for child in body.get_children():
+		if child is CollisionShape2D:
+			child.queue_free()
 	body.velocity.y = -170
 	timer.start()
 
