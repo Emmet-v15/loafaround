@@ -2,11 +2,11 @@ extends Node
 
 var cutscene_played = true
 
-signal coins_updated(new_coin_count: int)
-var coins: int = 0:
+signal points_updated(new_point_count: int)
+var points: int = 0:
 	set(value):
-		coins = value
-		coins_updated.emit(coins)
+		points = value
+		points_updated.emit(points)
 
-func add_coin() -> void:
-	coins += 1
+func add_point() -> void:
+	points += 1

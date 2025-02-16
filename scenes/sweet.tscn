@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyg6v1fk66p3t"]
+[gd_scene load_steps=9 format=3 uid="uid://pjg4t4wfbar0"]
 
+[ext_resource type="Texture2D" uid="uid://cglch8i1gsxs0" path="res://assets/Brackeys Assets/sprites/coin.png" id="1_k11jk"]
 [ext_resource type="Script" path="res://scripts/sweet.gd" id="1_w346m"]
 [ext_resource type="AudioStream" uid="uid://b0jybfursac6w" path="res://assets/Brackeys Assets/sounds/coin.wav" id="3_s4nsy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l86wt"]
+atlas = ExtResource("1_k11jk")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kmd7h"]
 radius = 5.0
@@ -49,7 +54,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PickupSound:playing")
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -72,6 +77,18 @@ tracks/2/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7okc0"]
 _data = {
@@ -82,14 +99,15 @@ _data = {
 [node name="Sweet" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_w346m")
+image = SubResource("AtlasTexture_l86wt")
+sound_effect = ExtResource("3_s4nsy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kmd7h")
 
-[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_s4nsy")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
