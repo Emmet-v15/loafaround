@@ -449,13 +449,14 @@ radius = 0.894929
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -16)
 collision_layer = 2
+floor_max_angle = 0.87441
 script = ExtResource("1_kqxga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_asbe6")
 animation = &"back"
 autoplay = "idle"
-frame_progress = 0.294931
+frame_progress = 0.602887
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
