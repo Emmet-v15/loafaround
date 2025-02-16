@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cera8vgpgb5er"]
+[gd_scene load_steps=29 format=4 uid="uid://cera8vgpgb5er"]
 
 [ext_resource type="PackedScene" uid="uid://dovnj3j65c1s" path="res://scenes/player.tscn" id="1_opryh"]
 [ext_resource type="Texture2D" uid="uid://dr1gcufsh7i83" path="res://assets/tilesheets/Candy Land/candy land tiels - free version.png" id="2_h8mej"]
@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/Brackeys Assets/fonts/PixelOperator8.ttf" id="3_6lvv1"]
 [ext_resource type="Texture2D" uid="uid://ow3jeob2bpeq" path="res://assets/tilesheets/Candy Land/day background.png" id="5_2dmg2"]
 [ext_resource type="PackedScene" uid="uid://bvira5xra8ux1" path="res://scenes/killzone.tscn" id="5_3ifhl"]
-[ext_resource type="PackedScene" uid="uid://ccnra8hw3g7c0" path="res://scenes/bird.tscn" id="8_m4vpp"]
+[ext_resource type="Texture2D" uid="uid://dpbmjik6ctusc" path="res://assets/Character/Bird/All_in_One.png" id="8_bc7yc"]
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="9_t0fg1"]
 
 [sub_resource type="TileSet" id="TileSet_mgqxg"]
@@ -108,6 +108,187 @@ sources/0 = SubResource("TileSetAtlasSource_47i76")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wflq5"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijrp0"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu7i0"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywayi"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2ges"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsuur"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqssd"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td387"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuwsl"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4tx0"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jrqf"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6gmd"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi1bm"]
+atlas = ExtResource("8_bc7yc")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ft5xf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijrp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu7i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywayi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2ges")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsuur")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqssd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td387")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuwsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4tx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jrqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6gmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi1bm")
+}],
+"loop": true,
+"name": &"stomp",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_fh6ew"]
+resource_name = "cutscene"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-152, -89)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vdhp7"]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-152, -89), Vector2(-152, -89)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"stomp", &"fly"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(26, -21)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a77w5"]
+_data = {
+"RESET": SubResource("Animation_vdhp7"),
+"cutscene": SubResource("Animation_fh6ew")
+}
+
 [node name="Game" type="Node2D"]
 
 [node name="World" type="Node" parent="."]
@@ -180,5 +361,17 @@ scale = Vector2(0.122853, 0.1357)
 texture = ExtResource("5_2dmg2")
 metadata/_edit_lock_ = true
 
-[node name="Bird" parent="." instance=ExtResource("8_m4vpp")]
-position = Vector2(241, -74)
+[node name="Bird" type="Node2D" parent="."]
+position = Vector2(-152, -89)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird"]
+position = Vector2(1, -2)
+sprite_frames = SubResource("SpriteFrames_ft5xf")
+animation = &"stomp"
+autoplay = "stomp"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bird"]
+libraries = {
+"": SubResource("AnimationLibrary_a77w5")
+}
+autoplay = "RESET"

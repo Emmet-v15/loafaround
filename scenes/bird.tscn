@@ -115,4 +115,3 @@ position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_ft5xf")
 animation = &"stomp"
 autoplay = "stomp"
-frame_progress = 0.95811
