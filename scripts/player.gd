@@ -5,13 +5,15 @@ const JUMP_VELOCITY = -300.
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var cutscene_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var baguette: Sprite2D = $Node2D/Baguette
+@onready var animation_player: AnimationPlayer = $Node2D/Baguette/AnimationPlayer
 
 #step 0: stop player movement until the cutscene is finished
 var can_move = false
 
 var extra_jumps = 1
 var _current_extra_jumps = 0
-
+var _old_direction = false
 
 func _ready():
 
@@ -34,7 +36,7 @@ func _ready():
 func _process(delta):
 	if can_move:
 		move(delta)  # Replace with your movement logic
-
+		
 func move(delta):
 	var jumped_fall = false
 
@@ -66,7 +68,23 @@ func move(delta):
 				animated_sprite_2d.play("falling")
 			else:
 				animated_sprite_2d.play("falling")
-	
+
+	var active = false
+
+	if Input.is_action_pressed("attack"):
+		animation_player.play("swing")
+		baguette.get_parent().scale.x = -1 if animated_sprite_2d.flip_h else 1
+		active = true
+	else:
+		animation_player.stop()
+
+	if _old_direction != animated_sprite_2d.flip_h:
+		_old_direction = animated_sprite_2d.flip_h
+		baguette.get_parent().scale.x = -1 if animated_sprite_2d.flip_h else 1
+
+	if !active:
+		baguette.position = lerp(baguette.position, animated_sprite_2d.position, 10 * delta)
+
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):

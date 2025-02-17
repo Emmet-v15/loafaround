@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://dovnj3j65c1s"]
+[gd_scene load_steps=40 format=3 uid="uid://dovnj3j65c1s"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_kqxga"]
 [ext_resource type="Texture2D" uid="uid://dbn0kb5q03nrm" path="res://assets/Character/cat-sprite.png" id="2_fw5al"]
+[ext_resource type="Texture2D" uid="uid://415kx7eea3fg" path="res://assets/Food/baguette.png" id="3_2s3kg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdx82"]
 atlas = ExtResource("2_fw5al")
@@ -449,6 +450,161 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_effpc"]
 radius = 0.894929
 
+[sub_resource type="Animation" id="Animation_mbl0g"]
+resource_name = "swing"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-0.223402, 0, 0, 0.00555556, -0.280416, -1.9059, -0.00555556, 0.0297767, 0.0111111, -0.0595534, -0.759383, -0.0111111, -0.206401, 0.00555556, 0.103201, -0.0482899, -0.00555556, -0.0832001, 0.0111111, 0.1664, 0.738217, -0.0111111, 0.0116741, 0.0166667, -0.0175112, -0.223402, -0.0166667, 0.16027, 0, 0),
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.2, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-10, 0, 0, 0.00555556, 0.166667, -9, -0.00555556, -0.555556, 0.0111111, 1.11111, 0, -0.0111111, -2, 0.00555556, 1, 9, -0.00555556, -0.555556, 0.0111111, 1.11111, 10, -0.0111111, -0.166667, 0, 0),
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(3, 2, 2, 2, 2),
+"points": PackedFloat32Array(14.0465, -0.00833333, 3.01163, 0.00833333, -3.01163, 2, -0.00555556, 0.891473, 0.0111111, -1.78295, -2, -0.0111111, 0.222222, 0.00555556, -0.111111, 0, -0.00555556, -0.888889, 0.0111111, 1.77778, 14, -0.0111111, -2.33333, 0, 0),
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_eqsm2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.223402, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(14, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_1dus3"]
+resource_name = "swing_2"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0.223, 0, 0, 0.00555556, 0.2805, 1.906, -0.00555556, -0.0297778, 0.0111111, 0.0595556, 0.759, -0.0111111, 0.206444, 0.00555556, -0.103222, 0.048, -0.00555556, 0.0831667, 0.0111111, -0.166333, -0.738, -0.0111111, -0.0116667, 0.0166667, 0.0175, 0.223, -0.0166667, -0.160167, 0, 0),
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.2, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(10, 0, 0, 0.00555556, -0.166667, 9, -0.00555556, 0.555556, 0.0111111, -1.11111, 0, -0.0111111, 2, 0.00555556, -1, -9, -0.00555556, 0.555556, 0.0111111, -1.11111, -10, -0.0111111, 0.166667, 0, 0),
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-14.047, 0, 0, 0.00555556, 2.00783, -2, -0.00555556, -0.8915, 0.0111111, 1.783, 2, -0.0111111, -0.222222, 0.00555556, 0.111111, 0, -0.00555556, 0.888889, 0.0111111, -1.77778, -14, -0.0111111, 2.33333, 0, 0),
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pcymj"]
+_data = {
+"RESET": SubResource("Animation_eqsm2"),
+"swing": SubResource("Animation_mbl0g"),
+"swing_2": SubResource("Animation_1dus3")
+}
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -16)
 collision_layer = 2
@@ -457,9 +613,8 @@ script = ExtResource("1_kqxga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_asbe6")
-animation = &"ded"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.904706
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -473,4 +628,18 @@ position = Vector2(0, 3)
 scale = Vector2(-6.75875, -6.72174)
 shape = SubResource("CircleShape2D_effpc")
 
-[node name="Baguette" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(-1, 1)
+
+[node name="Baguette" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(-10, 14)
+rotation = -0.223402
+scale = Vector2(1, 1)
+texture = ExtResource("3_2s3kg")
+offset = Vector2(5.63156, -5.67654)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Baguette"]
+libraries = {
+"": SubResource("AnimationLibrary_pcymj")
+}
