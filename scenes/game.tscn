@@ -570,6 +570,21 @@ A SLICE OF BDAY CAKE!!
 
 "
 
+[node name="Label24" type="Label" parent="World/Labels"]
+z_index = 6
+offset_left = -1758.0
+offset_top = -264.0
+offset_right = -1581.0
+offset_bottom = -201.0
+theme_override_colors/font_color = Color(1, 0.415686, 0.705882, 1)
+theme_override_fonts/font = ExtResource("3_6lvv1")
+theme_override_font_sizes/font_size = 8
+text = "WE LOVE U AND WE HOPE THESE 
+19 SWEETS DO NOT GIVE U 
+DIABETES AND MAKE U HAPPI :D
+
+"
+
 [node name="Label3" type="Label" parent="World/Labels"]
 z_index = 6
 offset_left = -140.0
@@ -865,7 +880,7 @@ position = Vector2(1971, -157)
 texture = ExtResource("16_45227")
 
 [node name="Jam donut" parent="World/Sweets" instance=ExtResource("10_ab8fi")]
-position = Vector2(2063, -126)
+position = Vector2(2067, -114)
 
 [node name="Sprite2D" parent="World/Sweets/Jam donut" index="0"]
 texture = ExtResource("17_ngfgq")
@@ -883,6 +898,15 @@ position = Vector2(-683, -81)
 [node name="Sprite2D" parent="World/Sweets/Donut" index="0"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_hoyaj")
+
+[node name="Croissant1" parent="World/Sweets" instance=ExtResource("10_ab8fi")]
+position = Vector2(-1536, -236)
+
+[node name="Croissant2" parent="World/Sweets" instance=ExtResource("10_ab8fi")]
+position = Vector2(-1536, -266)
+
+[node name="Cake" parent="World/Sweets" instance=ExtResource("10_ab8fi")]
+position = Vector2(-1536, -297)
 
 [node name="Player" parent="." instance=ExtResource("1_opryh")]
 z_index = 10
