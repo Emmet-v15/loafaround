@@ -28,6 +28,7 @@ func _ready():
 	# step 2: check the global variable to see if the cutscene has been played
 	if !GameManager.cutscene_played:
 		await get_tree().create_timer(cutscene_length).timeout # Wait for the cutscene to finish
+		print("finished cutscene")
 		GameManager.cutscene_played = true # Set the global variable to true so we don't play the cutscene next time we load this code
 	
 	cutscene_player.seek(cutscene_length) # Skip the cutscene (seek means jump to a specific time in the animation)

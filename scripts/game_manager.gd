@@ -1,6 +1,6 @@
 extends Node
 
-var cutscene_played = true
+var cutscene_played = false
 var has_baguette = false
 var has_food = {}
 
