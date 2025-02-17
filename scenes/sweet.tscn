@@ -1,12 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyg6v1fk66p3t"]
+[gd_scene load_steps=7 format=3 uid="uid://dyg6v1fk66p3t"]
 
-[ext_resource type="Texture2D" uid="uid://cglch8i1gsxs0" path="res://assets/Brackeys Assets/sprites/coin.png" id="1_k11jk"]
 [ext_resource type="Script" path="res://scripts/sweet.gd" id="1_w346m"]
 [ext_resource type="AudioStream" uid="uid://b0jybfursac6w" path="res://assets/Brackeys Assets/sounds/coin.wav" id="3_s4nsy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l86wt"]
-atlas = ExtResource("1_k11jk")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kmd7h"]
 radius = 5.0
@@ -99,7 +94,6 @@ _data = {
 [node name="Sweet" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_w346m")
-image = SubResource("AtlasTexture_l86wt")
 sound_effect = ExtResource("3_s4nsy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
