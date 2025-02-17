@@ -71,9 +71,11 @@ func move(delta):
 			else:
 				animated_sprite_2d.play("falling")
 
+
 	if Input.is_action_pressed("attack"):
-		animation_player.play("swing")
-		baguette.get_parent().scale.x = -1 if animated_sprite_2d.flip_h else 1
+		if GameManager.has_baguette:
+			animation_player.play("swing")
+			baguette.get_parent().scale.x = -1 if animated_sprite_2d.flip_h else 1
 	else:
 		animation_player.stop()
 
