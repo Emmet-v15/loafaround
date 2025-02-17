@@ -5,17 +5,13 @@ const JUMP_VELOCITY = -300.
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var cutscene_player: AnimationPlayer = $"../AnimationPlayer"
-@onready var baguette: Sprite2D = $Node2D/Baguette
-@onready var animation_player: AnimationPlayer = $Node2D/Baguette/AnimationPlayer
 
 #step 0: stop player movement until the cutscene is finished
 var can_move = false
 
 var extra_jumps = 1
 var _current_extra_jumps = 0
-var _old_direction = false
-var _lagged_position = Vector2()
-var _velocity = Vector2()
+
 
 func _ready():
 
@@ -28,7 +24,6 @@ func _ready():
 	# step 2: check the global variable to see if the cutscene has been played
 	if !GameManager.cutscene_played:
 		await get_tree().create_timer(cutscene_length).timeout # Wait for the cutscene to finish
-		print("finished cutscene")
 		GameManager.cutscene_played = true # Set the global variable to true so we don't play the cutscene next time we load this code
 	
 	cutscene_player.seek(cutscene_length) # Skip the cutscene (seek means jump to a specific time in the animation)
@@ -39,7 +34,7 @@ func _ready():
 func _process(delta):
 	if can_move:
 		move(delta)  # Replace with your movement logic
-		
+
 func move(delta):
 	var jumped_fall = false
 
@@ -56,7 +51,7 @@ func move(delta):
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
 	elif direction < 0:
-		animated_sprite_2d.flip_h = true
+		animated_sprite_2d.flip_h = true 	
 	
 	# Play Animations
 	if animated_sprite_2d.animation != "ded":
@@ -71,18 +66,8 @@ func move(delta):
 				animated_sprite_2d.play("falling")
 			else:
 				animated_sprite_2d.play("falling")
+	
 
-
-	if Input.is_action_pressed("attack"):
-		if GameManager.has_baguette:
-			animation_player.play("swing")
-			baguette.get_parent().scale.x = -1 if animated_sprite_2d.flip_h else 1
-	else:
-		animation_player.stop()
-
-	if _old_direction != animated_sprite_2d.flip_h:
-		_old_direction = animated_sprite_2d.flip_h
-		baguette.get_parent().scale.x = -1 if animated_sprite_2d.flip_h else 1
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -104,10 +89,14 @@ func move(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 
-	_lagged_position = lerp(_lagged_position, baguette.global_position, 0.1)
-	baguette.global_position = _lagged_position
-	_velocity = lerp(_velocity, Vector2(0, 0), 0.9)
-	baguette.global_position += _velocity * delta
-
-
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	if GameManager.cutscene_played:
+		GameManager.has_baguette = true
+		get_parent().get_node("AnimationPlayer").play("end")
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	print("exited")
