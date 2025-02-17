@@ -14,4 +14,3 @@ func _on_body_entered(_body: Node2D) -> void:
 	GameManager.add_point()
 	GameManager.has_food[name] = true		
 	animation_player.play("pickup")
-
