@@ -14,6 +14,8 @@ var can_move = false
 var extra_jumps = 1
 var _current_extra_jumps = 0
 var _old_direction = false
+var _lagged_position = Vector2()
+var _velocity = Vector2()
 
 func _ready():
 
@@ -53,7 +55,7 @@ func move(delta):
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
 	elif direction < 0:
-		animated_sprite_2d.flip_h = true 	
+		animated_sprite_2d.flip_h = true
 	
 	# Play Animations
 	if animated_sprite_2d.animation != "ded":
@@ -69,23 +71,15 @@ func move(delta):
 			else:
 				animated_sprite_2d.play("falling")
 
-	var active = false
-
 	if Input.is_action_pressed("attack"):
 		animation_player.play("swing")
 		baguette.get_parent().scale.x = -1 if animated_sprite_2d.flip_h else 1
-		active = true
 	else:
 		animation_player.stop()
 
 	if _old_direction != animated_sprite_2d.flip_h:
 		_old_direction = animated_sprite_2d.flip_h
 		baguette.get_parent().scale.x = -1 if animated_sprite_2d.flip_h else 1
-
-	if !active:
-		baguette.position = lerp(baguette.position, animated_sprite_2d.position, 10 * delta)
-
-
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -106,5 +100,11 @@ func move(delta):
 		velocity.x = direction * SPEED * delta
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+
+	_lagged_position = lerp(_lagged_position, baguette.global_position, 0.1)
+	baguette.global_position = _lagged_position
+	_velocity = lerp(_velocity, Vector2(0, 0), 0.9)
+	baguette.global_position += _velocity * delta
+
 
 	move_and_slide()
