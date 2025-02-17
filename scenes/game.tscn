@@ -411,30 +411,6 @@ BACK >:C"]
 
 [sub_resource type="Animation" id="Animation_hmjgb"]
 resource_name = "cutscene2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a77w5"]
 _data = {
@@ -897,7 +873,6 @@ texture = ExtResource("5_2dmg2")
 metadata/_edit_lock_ = true
 
 [node name="Bird" type="Node2D" parent="."]
-position = Vector2(237, -78)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird"]
 sprite_frames = SubResource("SpriteFrames_ft5xf")
