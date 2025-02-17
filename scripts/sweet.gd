@@ -6,12 +6,12 @@ extends Node2D
 @export var sound_effect: AudioStream
 
 func _ready():
-	if GameManager.has_food[name]:
+	if GameManager.has_food.has(name):
 		queue_free()
 	sound_player.stream = sound_effect
 	
 func _on_body_entered(_body: Node2D) -> void:
 	GameManager.add_point()
-	GameManager.has_food[name] = true
+	GameManager.has_food[name] = true		
 	animation_player.play("pickup")
 
