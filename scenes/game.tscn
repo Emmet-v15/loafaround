@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://cera8vgpgb5er"]
+[gd_scene load_steps=58 format=4 uid="uid://cera8vgpgb5er"]
 
 [ext_resource type="PackedScene" uid="uid://dovnj3j65c1s" path="res://scenes/player.tscn" id="1_opryh"]
 [ext_resource type="Texture2D" uid="uid://dr1gcufsh7i83" path="res://assets/tilesheets/Candy Land/candy land tiels - free version.png" id="2_h8mej"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dpbmjik6ctusc" path="res://assets/Character/Bird/All_in_One.png" id="8_bc7yc"]
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="9_t0fg1"]
 [ext_resource type="Texture2D" uid="uid://bu3y0mpjxxl20" path="res://assets/Food/Deserts/NOT_OUTLINED/KeyLimePie.png" id="10_1l3md"]
-[ext_resource type="PackedScene" uid="uid://pjg4t4wfbar0" path="res://scenes/sweet.tscn" id="10_ab8fi"]
+[ext_resource type="PackedScene" uid="uid://dyg6v1fk66p3t" path="res://scenes/sweet.tscn" id="10_ab8fi"]
 [ext_resource type="Texture2D" uid="uid://dp8copypi0mfu" path="res://assets/Food/Deserts/NOT_OUTLINED/Brownie.png" id="11_6ccgd"]
 [ext_resource type="Texture2D" uid="uid://ur3r4f468ysf" path="res://assets/Food/Deserts/NOT_OUTLINED/Cheesecake.png" id="11_wn6cm"]
 [ext_resource type="Texture2D" uid="uid://bvdlyi3hhj3eo" path="res://assets/Food/Deserts/NOT_OUTLINED/ChocolateCoveredStrawberry.png" id="11_yk5lg"]
@@ -341,6 +341,18 @@ radius = 36.0139
 
 [sub_resource type="Animation" id="Animation_vdhp7"]
 length = 19.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(239, -77)]
+}
 
 [sub_resource type="Animation" id="Animation_sknti"]
 resource_name = "cutscene 1"
@@ -412,11 +424,28 @@ BACK >:C"]
 [sub_resource type="Animation" id="Animation_hmjgb"]
 resource_name = "cutscene2"
 
+[sub_resource type="Animation" id="Animation_2jbp0"]
+resource_name = "end"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(239, -77), Vector2(1143, -977)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a77w5"]
 _data = {
 "RESET": SubResource("Animation_vdhp7"),
 "cutscene": SubResource("Animation_sknti"),
-"cutscene2": SubResource("Animation_hmjgb")
+"cutscene2": SubResource("Animation_hmjgb"),
+"end": SubResource("Animation_2jbp0")
 }
 
 [node name="Game" type="Node2D"]
@@ -526,20 +555,35 @@ text = "We need to break this wall "
 
 [node name="Label23" type="Label" parent="World/Labels"]
 z_index = 6
-offset_left = -1850.0
-offset_top = -383.0
-offset_right = -1260.0
-offset_bottom = -253.0
+offset_left = -1479.0
+offset_top = -273.0
+offset_right = -1184.0
+offset_bottom = -210.0
 theme_override_colors/font_color = Color(1, 0.415686, 0.705882, 1)
 theme_override_fonts/font = ExtResource("3_6lvv1")
-theme_override_font_sizes/font_size = 16
-text = "YAY YOU BROKE THE WALL!!AS A TREAT WE GIVE YOU 
-2 SPECIAL CROISSANTS AND A SLICE OF BDAY CAKE!!
+theme_override_font_sizes/font_size = 8
+text = "YAY YOU BROKE THE WALL!!
 
-WE LOVE U AND WE HOPE THESE 19 SWEETS DO NOT
-GIVE U DIABETES AND MAKE U HAPPI :DDD
+AS A TREAT WE GIVE YOU 
+2 SPECIAL CROISSANTS AND 
+A SLICE OF BDAY CAKE!!
 
-HAPPY NINETEENTH BIRTHDAY MALICE <33"
+"
+
+[node name="Label24" type="Label" parent="World/Labels"]
+z_index = 6
+offset_left = -1758.0
+offset_top = -264.0
+offset_right = -1581.0
+offset_bottom = -201.0
+theme_override_colors/font_color = Color(1, 0.415686, 0.705882, 1)
+theme_override_fonts/font = ExtResource("3_6lvv1")
+theme_override_font_sizes/font_size = 8
+text = "WE LOVE U AND WE HOPE THESE 
+19 SWEETS DO NOT GIVE U 
+DIABETES AND MAKE U HAPPI :D
+
+"
 
 [node name="Label3" type="Label" parent="World/Labels"]
 z_index = 6
@@ -836,7 +880,7 @@ position = Vector2(1971, -157)
 texture = ExtResource("16_45227")
 
 [node name="Jam donut" parent="World/Sweets" instance=ExtResource("10_ab8fi")]
-position = Vector2(2063, -126)
+position = Vector2(2067, -114)
 
 [node name="Sprite2D" parent="World/Sweets/Jam donut" index="0"]
 texture = ExtResource("17_ngfgq")
@@ -854,6 +898,15 @@ position = Vector2(-683, -81)
 [node name="Sprite2D" parent="World/Sweets/Donut" index="0"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_hoyaj")
+
+[node name="Croissant1" parent="World/Sweets" instance=ExtResource("10_ab8fi")]
+position = Vector2(-1536, -236)
+
+[node name="Croissant2" parent="World/Sweets" instance=ExtResource("10_ab8fi")]
+position = Vector2(-1536, -266)
+
+[node name="Cake" parent="World/Sweets" instance=ExtResource("10_ab8fi")]
+position = Vector2(-1536, -297)
 
 [node name="Player" parent="." instance=ExtResource("1_opryh")]
 z_index = 10
@@ -873,6 +926,7 @@ texture = ExtResource("5_2dmg2")
 metadata/_edit_lock_ = true
 
 [node name="Bird" type="Node2D" parent="."]
+position = Vector2(239, -77)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird"]
 sprite_frames = SubResource("SpriteFrames_ft5xf")
