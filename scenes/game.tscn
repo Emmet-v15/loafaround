@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://cera8vgpgb5er"]
+[gd_scene load_steps=56 format=4 uid="uid://cera8vgpgb5er"]
 
 [ext_resource type="PackedScene" uid="uid://dovnj3j65c1s" path="res://scenes/player.tscn" id="1_opryh"]
 [ext_resource type="Texture2D" uid="uid://dr1gcufsh7i83" path="res://assets/tilesheets/Candy Land/candy land tiels - free version.png" id="2_h8mej"]
@@ -140,7 +140,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_asodm"]
 resource_name = "platform 1"
 length = 10.0
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -158,6 +158,82 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_6vbu6"),
 "platform 1": SubResource("Animation_asodm")
+}
+
+[sub_resource type="Animation" id="Animation_owpkb"]
+resource_name = "move"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667, 2, 2.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(808, -345), Vector2(808, -345), Vector2(1016, -362), Vector2(1016, -362)]
+}
+
+[sub_resource type="Animation" id="Animation_f21oa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(808, -345)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ncptc"]
+_data = {
+"RESET": SubResource("Animation_f21oa"),
+"move": SubResource("Animation_owpkb")
+}
+
+[sub_resource type="Animation" id="Animation_62wpl"]
+resource_name = "move"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2168, -73), Vector2(2351, 183), Vector2(2216, 199)]
+}
+
+[sub_resource type="Animation" id="Animation_a2keq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2168, -73)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f26n5"]
+_data = {
+"RESET": SubResource("Animation_a2keq"),
+"move": SubResource("Animation_62wpl")
 }
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wflq5"]
@@ -397,10 +473,22 @@ autoplay = "platform 1"
 position = Vector2(241, -135)
 
 [node name="Platform3" parent="World/Platforms" instance=ExtResource("2_q5lgs")]
-position = Vector2(850, -342)
+position = Vector2(808, -345)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Platforms/Platform3"]
+libraries = {
+"": SubResource("AnimationLibrary_ncptc")
+}
+autoplay = "move"
 
 [node name="Platform4" parent="World/Platforms" instance=ExtResource("2_q5lgs")]
 position = Vector2(2168, -73)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Platforms/Platform4"]
+libraries = {
+"": SubResource("AnimationLibrary_f26n5")
+}
+autoplay = "move"
 
 [node name="Labels" type="Node" parent="World"]
 
@@ -625,6 +713,17 @@ theme_override_colors/font_color = Color(1, 0.415686, 0.705882, 1)
 theme_override_fonts/font = ExtResource("3_6lvv1")
 theme_override_font_sizes/font_size = 8
 text = "S is for Sweet <3"
+
+[node name="Label20" type="Label" parent="World/Labels"]
+z_index = 6
+offset_left = -86.0
+offset_top = 32.0
+offset_right = 54.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(1, 0.811765, 0.905882, 1)
+theme_override_fonts/font = ExtResource("3_6lvv1")
+theme_override_font_sizes/font_size = 8
+text = "You can double jump :D"
 
 [node name="Killzone" parent="World" instance=ExtResource("5_3ifhl")]
 position = Vector2(0, 184)
