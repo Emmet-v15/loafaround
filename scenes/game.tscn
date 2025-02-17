@@ -560,17 +560,6 @@ theme_override_fonts/font = ExtResource("3_6lvv1")
 theme_override_font_sizes/font_size = 16
 text = "YOU ARE OUR ONE AND ONLY FRENCH GIRL!! (+ASIAN QUEEN)"
 
-[node name="Label14" type="Label" parent="World/Labels/Label14"]
-z_index = 6
-offset_left = 279.0
-offset_top = 126.0
-offset_right = 951.0
-offset_bottom = 163.0
-theme_override_colors/font_color = Color(1, 0.415686, 0.705882, 1)
-theme_override_fonts/font = ExtResource("3_6lvv1")
-theme_override_font_sizes/font_size = 8
-text = "(Dont look down UwU)"
-
 [node name="Label15" type="Label" parent="World/Labels"]
 z_index = 6
 offset_left = 1776.0
@@ -583,6 +572,29 @@ theme_override_font_sizes/font_size = 8
 text = "SO MANY SLIMES OMG :OOO
 
 DONT LET THEM TAKE YOUR TREATS!!"
+
+[node name="Label16" type="Label" parent="World/Labels"]
+z_index = 6
+offset_left = 1056.0
+offset_top = -47.0
+offset_right = 1728.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(1, 0.415686, 0.705882, 1)
+theme_override_fonts/font = ExtResource("3_6lvv1")
+theme_override_font_sizes/font_size = 8
+text = "(Don't look down again UwU)"
+
+[node name="Label17" type="Label" parent="World/Labels"]
+z_index = 6
+offset_left = 671.0
+offset_top = -38.0
+offset_right = 733.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(1, 0.415686, 0.705882, 1)
+theme_override_fonts/font = ExtResource("3_6lvv1")
+theme_override_font_sizes/font_size = 8
+text = "Don't look 
+down :o"
 
 [node name="Killzone" parent="World" instance=ExtResource("5_3ifhl")]
 position = Vector2(0, 184)
