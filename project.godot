@@ -27,6 +27,7 @@ UIController="*res://scripts/ui_controller.gd"
 
 window/size/mode=3
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://assets/UI/Sprout Lands/Sprite sheets/Mouse sprites/Triangle Mouse icon 1.png"
 
 [filesystem]
 

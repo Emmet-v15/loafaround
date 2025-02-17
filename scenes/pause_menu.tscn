@@ -1,31 +1,23 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxeiscq4k4diq"]
+[gd_scene load_steps=17 format=3 uid="uid://bxeiscq4k4diq"]
 
-[ext_resource type="Texture2D" uid="uid://xe4746mpoe3x" path="res://assets/Brackeys Assets/sprites/slider-grabber.png" id="1_1tvo1"]
 [ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/Brackeys Assets/fonts/PixelOperator8.ttf" id="1_6qpfi"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_hnrne"]
+[ext_resource type="Texture2D" uid="uid://clgwjp3eyikyi" path="res://assets/UI/Sprout Lands/Sprite sheets/Mouse sprites/Catpaw Mouse icon.png" id="2_oc0ca"]
 [ext_resource type="FontFile" uid="uid://cbgps42whdll" path="res://assets/Brackeys Assets/fonts/PixelOperator8-Bold.ttf" id="2_vxu2l"]
+[ext_resource type="Texture2D" uid="uid://c2nevesntnmla" path="res://assets/UI/Sprout Lands/Sprite sheets/Mouse sprites/Catpaw holding Mouse icon.png" id="3_cmurf"]
+[ext_resource type="Texture2D" uid="uid://c5qrftx8dij4g" path="res://assets/UI/Candy Land/menu - Large H.png" id="3_puwfh"]
+[ext_resource type="Texture2D" uid="uid://b0r81rxp2kqht" path="res://assets/UI/Sprout Lands/Sprite sheets/Mouse sprites/Catpaw pointing Mouse icon.png" id="4_catyi"]
+[ext_resource type="Texture2D" uid="uid://jpc7085jmawe" path="res://assets/UI/Candy Land/menu - medium.png" id="4_tub6l"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_vpf38"]
 color = Color(0, 0, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_adivo"]
-atlas = ExtResource("1_1tvo1")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oih86"]
-atlas = ExtResource("1_1tvo1")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kpm2u"]
-atlas = ExtResource("1_1tvo1")
-region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bxgo"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(1, 1, 0, 0.4)
+bg_color = Color(1, 0.665813, 0.847368, 0.658824)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -37,7 +29,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(1, 1, 0, 0.74902)
+bg_color = Color(1, 0.74902, 0.87451, 0.74902)
 border_color = Color(0.8, 0.8, 0, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -58,6 +50,22 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 6
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eyb1v"]
+texture = ExtResource("3_puwfh")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gsno8"]
+texture = ExtResource("4_tub6l")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_s5lqm"]
 color = Color(0, 0, 0, 0)
 
@@ -66,31 +74,21 @@ default_font = ExtResource("1_6qpfi")
 Button/colors/font_color = Color(1, 0.94902, 0.105882, 1)
 HSeparator/constants/separation = 4
 HSeparator/styles/separator = SubResource("StyleBoxLine_vpf38")
-HSlider/icons/grabber = SubResource("AtlasTexture_adivo")
-HSlider/icons/grabber_disabled = SubResource("AtlasTexture_oih86")
-HSlider/icons/grabber_highlight = SubResource("AtlasTexture_kpm2u")
+HSlider/icons/grabber = ExtResource("2_oc0ca")
+HSlider/icons/grabber_disabled = ExtResource("3_cmurf")
+HSlider/icons/grabber_highlight = ExtResource("4_catyi")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_8bxgo")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_lt81s")
 HSlider/styles/slider = SubResource("StyleBoxFlat_7qhi5")
-Label/colors/font_color = Color(1, 0.94902, 0.105882, 1)
-Label/colors/font_shadow_color = Color(0.94902, 0.454902, 0.105882, 1)
+Label/colors/font_color = Color(1, 0.883151, 0.975578, 1)
+Label/colors/font_shadow_color = Color(0.967026, 0.000763931, 0.966175, 1)
 MarginContainer/constants/margin_bottom = 5
 MarginContainer/constants/margin_left = 5
 MarginContainer/constants/margin_right = 5
 MarginContainer/constants/margin_top = 5
+Panel/styles/panel = SubResource("StyleBoxTexture_eyb1v")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_gsno8")
 VSeparator/styles/separator = SubResource("StyleBoxLine_s5lqm")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nikmq"]
-bg_color = Color(0.187176, 0.187176, 0.187176, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.412152, 0.412152, 0.412152, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -119,7 +117,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_nikmq")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/Panel"]
 layout_mode = 1

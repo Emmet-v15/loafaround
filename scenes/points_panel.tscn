@@ -1,15 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b06j5crqj7y0g"]
+[gd_scene load_steps=9 format=3 uid="uid://b06j5crqj7y0g"]
 
-[ext_resource type="Texture2D" uid="uid://cglch8i1gsxs0" path="res://assets/Brackeys Assets/sprites/coin.png" id="1_asd4x"]
 [ext_resource type="FontFile" uid="uid://bmf0k0oeq4k1k" path="res://assets/Brackeys Assets/fonts/PixelOperator8.ttf" id="1_gutd0"]
 [ext_resource type="Script" path="res://scripts/coin_panel.gd" id="1_us0gi"]
+[ext_resource type="Texture2D" uid="uid://br712cr8fe426" path="res://assets/UI/Candy Land/menu - S.png" id="2_ggqdu"]
+[ext_resource type="Texture2D" uid="uid://n7gptcsx24up" path="res://assets/UI/Sprout Lands/emojis-free/Emoji_Spritesheet_Free.png" id="4_fiduf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qu6i"]
+texture = ExtResource("2_ggqdu")
+
+[sub_resource type="Theme" id="Theme_k5muf"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_2qu6i")
 
 [sub_resource type="Theme" id="Theme_igvkm"]
 default_font = ExtResource("1_gutd0")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cy5wu"]
-atlas = ExtResource("1_asd4x")
-region = Rect2(3, 3, 10, 10)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbt3u"]
+atlas = ExtResource("4_fiduf")
+region = Rect2(1, 162, 30, 29)
 
 [node name="CoinPanel" type="CanvasLayer"]
 script = ExtResource("1_us0gi")
@@ -19,6 +26,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = SubResource("Theme_k5muf")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0
@@ -46,7 +54,7 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.85
-texture = SubResource("AtlasTexture_cy5wu")
+texture = SubResource("AtlasTexture_qbt3u")
 stretch_mode = 5
 
 [node name="PointsLabel" type="Label" parent="Control/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
